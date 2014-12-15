@@ -17,7 +17,7 @@
     /**
      * ngInject
      */
-    function scatterPlot (ScatterPlotDefaults) {
+    function scatterPlot (CartoConfig, ScatterPlotDefaults) {
 
         var PLOT_CLASS = 'mos-scatterplot';
 
@@ -32,7 +32,8 @@
         var module = {};
 
         module.restrict = 'EA';
-        module.template = '<svg class="chart"></svg>';
+        module.templateUrl = 'scripts/charting/scatterplot-partial.html';
+        //module.template = '<svg class="chart"></svg>';
         module.controller = 'ChartingController';
 
         module.scope = {
@@ -54,6 +55,35 @@
             $scope.configure(ScatterPlotDefaults);
 
             var config = $scope.config;
+
+            $scope.axisOptions = _.omit(CartoConfig.labels, 'squarefeet');
+            $scope.colorOptions = {'sector': 'Building Type',
+                                   'year': 'Year Built',
+                                   'squarefeet': 'Sq Ft'};
+
+            $scope.selected = {
+                x: 'eui',
+                y: 'emissions',
+                color: 'sector'
+            };
+
+            $scope.changeSelectedX = function (key) {
+                $scope.selected.x = key;
+                console.log('x');
+                console.log(key);
+            };
+
+            $scope.changeSelectedY = function (key) {
+                $scope.selected.y = key;
+                console.log('y');
+                console.log(key);
+            };
+
+            $scope.changeSelectedColor = function (key) {
+                $scope.selected.color = key;
+                console.log('color');
+                console.log(key);
+            };
 
             element.addClass(PLOT_CLASS);
             chart = d3.select('#' + attrs.id + ' .chart')

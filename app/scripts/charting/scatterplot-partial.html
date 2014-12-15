@@ -1,0 +1,36 @@
+<svg class="chart"></svg><br />
+<div>
+    <div class="btn-group" dropdown>
+        <p>X Axis: </p>
+        <button type="button" dropdown-toggle 
+            class="btn dropdown-toggle">{{axisOptions[selected.x]}} <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu">
+            <li ng-repeat="(key, value) in axisOptions">
+                <a ng-click="changeSelectedX(key)">{{::value}}</a>
+            </li>
+        </ul>
+    </div>
+    <div class="btn-group" dropdown>
+        <p>Y Axis: </p>
+        <button type="button" dropdown-toggle 
+            class="btn dropdown-toggle">{{axisOptions[selected.y]}} <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu">
+            <li ng-repeat="(key, value) in axisOptions">
+                <a ng-click="changeSelectedY(key)">{{::value}}</a>
+            </li>
+        </ul>
+    </div>
+    <div class="btn-group" dropdown>
+        <p>Color: </p>
+        <button type="button" dropdown-toggle 
+            class="btn dropdown-toggle">{{colorOptions[selected.color]}} <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu">
+            <li ng-repeat="(key, value) in colorOptions">
+                <a ng-click="changeSelectedColor(key)">{{::value}}</a>
+            </li>
+        </ul>
+    </div>
+</div>
