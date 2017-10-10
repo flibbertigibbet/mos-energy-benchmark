@@ -17,6 +17,7 @@
 
         // There is now only a single table, which contains data for all years.
         // The naming convention for the table is: mos_beb_{underscore seperated ascending years}.
+        // In staging and development, the table is: mos_staging_beb_{years}.
         // The `slice` is here to make the sort non-destructive.
         module.getTableName = getTableName;
 

@@ -3,7 +3,26 @@
   "version": "0.1.0",
   "license": "MIT",
   "repository": "https://github.com/azavea/mos-energy-benchmark",
-  "dependencies": {},
+  "dependencies": {
+    "@bower_components/angular": "angular/bower-angular#~1.6.4",
+    "@bower_components/angular-animate": "angular/bower-angular-animate#~1.6.4",
+    "@bower_components/angular-bootstrap": "angular-ui/bootstrap-bower#~2.5.0",
+    "@bower_components/angular-cookies": "angular/bower-angular-cookies#~1.6.4",
+    "@bower_components/angular-messages": "angular/bower-angular-messages#~1.6.4",
+    "@bower_components/angular-mocks": "angular/bower-angular-mocks#~1.6.4",
+    "@bower_components/angular-sanitize": "angular/bower-angular-sanitize#~1.6.4",
+    "@bower_components/angular-scenario": "angular/bower-angular-scenario#~1.6.4",
+    "@bower_components/angular-ui-router": "angular-ui/angular-ui-router-bower#~1.0.4",
+    "@bower_components/bootstrap-sass-official": "twbs/bootstrap-sass#~3.3.7",
+    "@bower_components/d3": "mbostock-bower/d3-bower#~3.5.17",
+    "@bower_components/d3-tip": "Caged/d3-tip#~0.6.7",
+    "@bower_components/es5-shim": "es-shims/es5-shim#~4.5.9",
+    "@bower_components/jquery": "jquery/jquery-dist#1.9.1 - 3",
+    "@bower_components/json3": "bestiejs/json3#~3.3.0",
+    "@bower_components/karma-read-json": "pizzapanther/Karma-Read-JSON#^1.1.0",
+    "@bower_components/lodash": "lodash/lodash#~4.17.4",
+    "@bower_components/panelsnap": "guidobouman/jquery-panelsnap#0.15.1"
+  },
   "devDependencies": {
     "grunt": "^1.0.1",
     "grunt-autoprefixer": "^3.0.4",
@@ -38,9 +57,11 @@
     "time-grunt": "^1.4.0"
   },
   "engines": {
-    "node": ">=0.10.0"
+    "node": ">=0.10.0",
+    "yarn": ">= 1.0.0"
   },
   "scripts": {
-    "test": "grunt test"
+    "test": "grunt test",
+    "postinstall": "rm -rf bower_components && ln -sf node_modules/@bower_components bower_components"
   }
 }

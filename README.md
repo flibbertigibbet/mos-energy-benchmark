@@ -3,10 +3,10 @@ BuildingEnergyBenchmarking
 
 http://visualization.phillybuildingbenchmarking.com/#/
 
-###Build Status
+### Build Status
 [![](https://travis-ci.org/azavea/mos-energy-benchmark.svg?branch=develop)](https://travis-ci.org/azavea/mos-energy-benchmark)
 
-###Developing
+### Developing
 
 Dependencies:
 ```
@@ -27,7 +27,7 @@ The dev app will be served at localhost:9000 and automatically opened in a new t
 
 The app will auto refresh after saving js/css/html
 
-###Deploying
+### Deploying
 
 1. `grunt build`
 2. `gem install s3_website` if you haven't already
@@ -35,7 +35,7 @@ The app will auto refresh after saving js/css/html
 4. `s3_website push`
 
 
-###Testing
+### Testing
 
 `npm test` will run the test suite.
 
